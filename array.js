@@ -59,7 +59,7 @@ function arrayContains(array, item) {
 }
 
 /**
- * Create an array that is the reserved of the original.
+ * Create an array that is the reversed of the original.
  *
  * WARNING: a reminder that the original(s) array must not be modified.
  * You can create new arrays if needed.
