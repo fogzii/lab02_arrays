@@ -91,8 +91,8 @@ function arrayHead(array) {
  * You can create new arrays if needed.
  *
  * @param {Array<number>} array of integers
- * @returns {Array<number>} an array of elements excluding the head,
- * or null array is empty
+ * @returns {Array<number>|null} an array of elements excluding the head,
+ * or null if the input array is empty
  */
 function arrayTail(array) {
   // FIXME
