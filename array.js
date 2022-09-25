@@ -213,9 +213,15 @@ function arraysMultiply(array1, array2) {
  * @returns {Array<number>} number of common elements between two arrays
  */
 function arraysCommon(array1, array2) {
+  const cpyArray = [];
+  for (const number of array2) {
+    cpyArray.push(number);
+  }
+
   const newArray = [];
   for (const number of array1) {
-    if (array2.includes(number)) {
+    if (cpyArray.includes(number)) {
+      cpyArray.splice(cpyArray.indexOf(number), 1);
       newArray.push(number);
     } 
   }
@@ -262,8 +268,8 @@ console.log();
 
 console.log();
 console.log('Testing : arrayCommon([1,2,3,2,1], [2,2,3,3,4])');
-console.log('Received:', arraysCommon([1, 2, 3, 2, 1], [2, 2, 3, 3, 4]));
-console.log('Expected: [ 2, 3, 2 ]');
+console.log('Received:', arraysCommon([1, 2, 3, 2, 1, 1, 1], [2, 2, 3, 3, 4, 1, 1]));
+console.log('Expected: [ 1, 2, 3, 2, 1 ]');
 console.log();
 
 // TODO: your own testing/debugging here
