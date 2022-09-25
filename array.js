@@ -132,11 +132,17 @@ function arrayTail(array) {
     return null;
   }
 
-  let count = 0;
+  const newArray = [];
+
+  let headRemoved = false;
   for (const number of array) {
-    count++;
+    if (headRemoved === false) {
+      headRemoved = true;
+      continue;
+    }
+    newArray.push(number);
   }
-  return array[count - 1];
+  return newArray;
 }
 
 /**
@@ -236,8 +242,11 @@ console.log();
 
 console.assert(arrayHead([]) === null, 'head');
 console.assert(arrayHead([5, 6, 3]) === 5, 'head');
-console.assert(arrayTail([]) === null, 'tail');
-console.assert(arrayTail([5, 6, 3]) === 3, 'tail');
+
+console.log();
+console.log(arrayTail([]));
+console.log(arrayTail([-5, 7, 8, -9, 6, 3]));
+console.log();
 
 console.log();
 console.log(arraysMultiply([1, 2, 3], [4, 5, 6, 7]));
